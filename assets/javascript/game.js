@@ -1,22 +1,58 @@
-var name = prompt("whats your name?");
-console.log("hello" + name);
+// Create an array of words
+var words = [
+    "lebowski",
+    "jeffery",
+    "rug",
+    "bunny",
+    "bowling",
+    "donnie",
+    "walter",
+    "caucasian",
+    "jackie treehorn",
+    "pomeranian",
+    "nihilism",
+    "creedence",
+    "maude",
+    "ringer",
+    "the stranger",
+    "beeper",
+    "toe",
+    "nail polish",
+    "chock full o nuts",
+    "cohen",
+    "brief case",
+    "the eagles"
+    ];
+    // Pick a random word
+    var word = words[Math.floor(Math.random() * words.length)];
+    // Set up the answer array
+    var answerArray = [];
+    for (var i = 0; i < word.length; i++) {
+    answerArray[i] = "_";
+    }
+    var remainingLetters = word.length;
+    // The game loop
+    while (remainingLetters > 0) {
+    // Show the player their progress
+    alert (answerArray.join(" "));
+    // Get a guess from the player
+    var guess = prompt("Guess a letter, or click Cancel to stop playing.");
+    if (guess === null) {
+    // Exit the game loop
+    break;
+    } else if (guess.length !== 1) {
+    alert("Please enter a single letter.");
+    } else {
+    // Update the game state with the guess
+    for (var j = 0; j < word.length; j++) {
+    if (word[j] === guess) {
+    answerArray[j] = guess;
+    remainingLetters--;
+    }
 
-//create an array of words
-var words = ["The Dude", "Walter", "Donnie", "Jackie Treehorn", "the ringer", "Caucasian", "Rug", "Pomeranian", "Nihilist", "Bowling", "Bunny", "Lebowski", "The Jesus", "Maude"];
+    // The end of the game loop
+    
 
-// pick a random word from the words array
-var word = words[ Math.floor(math.random() * words.length)];
-// set up the answerArray to show how many letters being used
-var answerArray =[];
-for (var i = 0; i <word.length; i++){
-    answerArray [i] = "_";
 }
-//create a variable to hold the number of remaining letters 
-var remaningLetters = word.length;
-
-// ******* main game loop************
-while (remainingLetters > 0){
-    //showthe player their progress 
-    alert(answerArray.join(" "));
-
+    }
 }
