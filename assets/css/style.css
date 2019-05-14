@@ -1,16 +1,37 @@
-body {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+@mixin transition {
+  -webkit=transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    
-}
-
+@mixin clear {
+  &:after {
+    content:"";
+    display: table;
+    clear: both;
   }
-    }
+}
+@mixin box-size {
+  -webkit-box-sizing: boarder-box;
+  -moz-box-sizing: boarder-box;
+}
+@mixin transition {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition:all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+@mixin fade {
+  -moz-transition: all 1s ease-in;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+@mixin opacity {
+  opacity:0.4;
+  filter:alpha(opacity=40);
+  @include fade;
+}
+@mixin corners ($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  -khtml-border-radius: $radius;
+}
