@@ -35,3 +35,12 @@
   border-radius: $radius;
   -khtml-border-radius: $radius;
 }
+body {
+  background:
+  Font-family: "Helveticaneue-Light",
+  "Helvetica Neue Light", "Helvetica Neue",Helvetica, Arial,"Lucinda Grande", sans-serif;
+  color:$white;
+  height:100%
+  text-align:center;
+  font-size:18px;
+}
