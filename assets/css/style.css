@@ -1,46 +1,66 @@
-@mixin transition {
-  -webkit=transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-@mixin clear {
-  &:after {
-    content:"";
-    display: table;
-    clear: both;
-  }
-}
-@mixin box-size {
-  -webkit-box-sizing: boarder-box;
-  -moz-box-sizing: boarder-box;
-}
-@mixin transition {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition:all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-@mixin fade {
-  -moz-transition: all 1s ease-in;
-  -moz-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-}
-@mixin opacity {
-  opacity:0.4;
-  filter:alpha(opacity=40);
-  @include fade;
-}
-@mixin corners ($radius) {
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  border-radius: $radius;
-  -khtml-border-radius: $radius;
-}
 body {
-  background:
-  Font-family: "Helveticaneue-Light",
-  "Helvetica Neue Light", "Helvetica Neue",Helvetica, Arial,"Lucinda Grande", sans-serif;
-  color:$white;
-  height:100%
-  text-align:center;
-  font-size:18px;
+  background: #ffb03a
+}
+
+#container {
+  background-image: url(../images/IMG_2273.PNG);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  font-family: 'londrina Solid', cursive;
+
+}
+.main-container {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+.ptSans {
+  font-family: 'PT Sans', sans-serif;
+
+}
+
+h1 {
+  width: 100%;
+  margin: auto;
+  padding-top: 25%;
+  padding-bottom: 10px;
+  font-size: 48px;
+}
+
+.bottom {
+  padding-bottom: 10%;
+}
+
+#guess {
+  margin: auto;
+  font-size: 36px;
+  margin-bottom: 45px;
+}
+
+.body-container {
+  text-align: center;
+  width: 80%;
+}
+
+.size {
+  font-size: 28px;
+  text-align: left;
+  padding-left: 43%;
+  margin-bottom: 30px;
+}
+
+.sizeNumber {
+  font-size: 28px;
+  text-align: left;
+  margin-bottom: 30px;
+  padding-right: 30px;
+}
+#img {
+  margin: 0 auto;
+}
+#winImage {
+  width:300px;
 }
