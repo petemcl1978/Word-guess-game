@@ -10,7 +10,7 @@ body {
   width: 100%;
   height: 100%;
   font-family: 'londrina Solid', cursive;
-  color: rgb(79, 12, 236);
+  
 }
 .main-container {
   width: 80%;
@@ -28,7 +28,7 @@ h1 {
   padding-top: 25%;
   padding-bottom: 10px;
   font-size: 48px;
-  color: white;
+  
 }
 
 .bottom {
