@@ -1,151 +1,74 @@
-window.onload = function(){
-    var alphabet =['a','b', 'c', 'd', 'e','f', 'g','h','i', 'j', 'k',
-'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var word;
-var guess;
-var guesses =[];
-var lives; 
-var counter;
-var space;
+//shorten the code 
+let $ = function (id) {
+    return document.getElementById(id)
+}
 
-//get elements
-var showLives = document.getElementById("mylives");
-//create alphabet ul 
-var buttons= function() {
-    myButtons= document.getElementById('buttons');
-    letters = document.createElement('ul');
+//global variable
+const words = ["Dude", "Donnie", "Walter", "Bunny", "Bowling", "Lebowski", "Rug", "Abide"];
+const images = ["assets/images/IMG_2272.JPG"]
+let word;
+const img = document.createElemnet("img")
+const parent = $("img")
+let answerArray = [];
+let userGuess;
+let rightGuess = false;
+let userRightGuess = 0;
+let left = 9;
+let wins = 0;
+let losses = 0;
 
-    for (var i =0; i < alphabet.length; i++){
-        letters.id = 'alphabet';
-        list = document.createElement('li');
-        list.id = 'letter';
-        List.innerHTML = alphabet[i];
-        check();
-        myButtons.appendChild(letters);
-        letters.appendChild(list);
-    }
-}
-}
-//create guesses
-result = function() {
-    wordHolder = document.getElementById('hold');
-correct= document.createElement('ul');
-    for (var i =0; i < word.length; i++){
-        correct.setAttribute('id', 'my-word');
-        guess = document.createElement('li');
-        guess.setAttribute('class', 'guess');
-        if (word[i]=== "-"){
-            guess.innerHTML = "-";
-            space = 1;
-        } else {
-            guess.innerHTML = "-";
-        }
-        guesses.push(guess);
-        wordHolder.appendChild(corret);
-    }
-}
-//show lives
-comments = function () {
-    showlives.innerHTML = "you have " +
-    lives + "lives";
-    if (lives < 1) {
-        showLives.innerHTML = "Game Over";
-    }
-    for (var i = 0; i < guesses.length;i++){
-        if(counter + space ==== guesses.length){
-            show.lives.innerHTML = "That Really Ties the Room Together";
-        }
-    }
-}
-//onClick Function 
-check = function () {
-    list.onclick = function(){
-        var guess = (this.innerHTML);
-        this.setAttribute("class", "active");
-        this.onclick =null;
-        for(var i = 0; i < word.length; i++) {
-            if(word[i] === guess){
-                guesses[i].innerHTML =guess;
-                counter += 1;
-            }
-        }
-        var j = (word.indexOf(guess));
-        if (j === -1) {
-            lives -=1;
-            comments();
-            animate();
-            } else {
-                comments();
-            }
-    }
-}
-//play
-ply = function () {
 
-    guesses = [];
-    lives = 10;
-    counter = 0;
-    result();
-    comments();
-    Canvas();
+//random word
+
+function random() {
+    let random = Math.floor(Math.random() + words.length);
+    word = words [random]
+    img.src = images [random]
 }
-play();
 
-// Create an array of words
-var words = [
-    "lebowski",
-    "jeffery",
-    "rug",
-    "bunny",
-    "bowling",
-    "donnie",
-    "walter",
-    "caucasian",
-    "jackie treehorn",
-    "pomeranian",
-    "nihilism",
-    "creedence",
-    "maude",
-    "ringer",
-    "the stranger",
-    "beeper",
-    "toe",
-    "nail polish",
-    "chock full o nuts",
-    "cohen",
-    "brief case",
-    "the eagles"
-    ];
-    // Pick a random word
-    var word = words[Math.floor(Math.random() * words.length)];
-    // Set up the answer array
-    var answerArray = [];
-    for (var i = 0; i < word.length; i++) {
-    answerArray[i] = "_";
+//show blank start
+function showBlank() {
+    for (i =0; i < word.length; i++) {
+        answerArray[i] = "_"
     }
-    var remainingLetters = word.length;
-    // The game loop
-    while (remainingLetters > 0) {
-    // Show the player their progress
-    modal (answerArray.join(" "));
-    // Get a guess from the player
-    var guess = prompt("Guess a letter, or click Cancel to stop playing.");
-    if (guess === null) {
-    // Exit the game loop
-    break;
-    } else if (guess.length !== 1) {
-    modal ("Please enter a single letter.");
-    } else {
-    // Update the game state with the guess
-    for (var j = 0; j < word.length; j++) {
-    if (word[j] === guess) {
-    answerArray[j] = guess;
-    remainingLetters--;
+    $("guess").innerHTML = answerArray.join(" ")
+}
+//guesses left
+function guessesleft() {
+    $("left").innerHTML = wins 
+}
+//wins
+functions winsScore() {
+    $("wins").innerHTML = wins 
+}
+//losses 
+function lossesScore() {
+    $("losses").innerHTML = losses 
+}
+//show wrong guess
+function wrongGuess(char) {
+    $("wrong").innerHTML += char + ", "
+}
+//resent function
+function initalGame() {
+    if ($("winImage")) {
+        $("winImage").remove()
     }
-
-    // The end of the game loop
     
+    left = 9;
+    answerArray = [];
+    $("wrong").innerHTML = "";
+    userRightGuess = 0
+    RightGuess = false;
+    guessesleft()
+    random()
+    showBlank()
+}
 
-}
-    }
-}
+//call inital function 
+initalGame()
+winsScore()
+lossesScore()
+
+//check letter 
+function showLetter (char, str) 
