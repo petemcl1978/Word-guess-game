@@ -62,15 +62,15 @@ a:focus, button:focus{
 
 /* change colours to suit your needs */
 ins {
-    background-color:#ff9;
-    color:rgb(252, 247, 247);
+    background-color:rgb(3, 3, 1);
+    color:rgb(17, 7, 7);
     text-decoration:none;
 }
 
 /* change colours to suit your needs */
 mark {
-    background-color:#ff9;
-    color:rgb(253, 250, 250); 
+    background-color:rgb(15, 15, 6);
+    color:rgb(12, 11, 11); 
     font-style:italic;
     font-weight:bold;
 }
