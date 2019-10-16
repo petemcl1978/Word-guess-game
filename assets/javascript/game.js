@@ -21,30 +21,32 @@ let losses = 0;
 //random word
 
 function random() {
-    let random = Math.floor(Math.random() + words.length);
-    word = words [random]
-    img.src = images [random]
+    let random = Math.floor(Math.random() * words.length);
+    word = words[random]
+    img.src = images[random]
 }
 
 //show blank start
 function showBlank() {
-    for (i =0; i < word.length; i++) {
+    for (i = 0; i < word.length; i++) {
         answerArray[i] = "_"
     }
     $("guess").innerHTML = answerArray.join(" ")
 }
 //guesses left
-function guessesleft() {
-    $("left").innerHTML = wins 
+function guessesLeft() {
+    $("left").innerHTML = left
 }
 //wins
 function winsScore() {
     $("wins").innerHTML = wins 
 }
+
 //losses 
 function lossesScore() {
     $("losses").innerHTML = losses 
 }
+
 //show wrong guess
 function wrongGuess(char) {
     $("wrong").innerHTML += char + ", "
@@ -59,7 +61,7 @@ function initalGame() {
     answerArray = [];
     $("wrong").innerHTML = "";
     userRightGuess = 0
-    RightGuess = false;
+    rightGuess = false;
     guessesleft()
     random()
     showBlank()
