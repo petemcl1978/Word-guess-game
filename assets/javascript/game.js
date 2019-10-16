@@ -71,4 +71,54 @@ winsScore()
 lossesScore()
 
 //check letter 
-function showLetter (char, str) 
+function showLetter (char, str) {
+    for (let j = 0; j < str.length; j++) {
+        if (char === str[j]) {
+            rightGuess = true
+            answerArray.splice(j,1,char)
+            userRightGuess++
+        }
+    }
+    $("guess").innerHTML = answerArray.join(" ")
+}
+//check length
+let matchLength = function() {
+    if (word.length === userRightGuess) return true 
+    else return false
+}
+
+//user guess
+document.onkeyup = function(event) {
+    userGuess = event.key.toLowerCase();
+
+    showLetter (userGuess, word)
+
+    if (rightGuess) {
+        rightGuess = false
+        if (matchLength()) {
+            let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/win.mp3');
+            audio.play()
+            img.setAttribute("id", "winImage")
+            parent.appendChild(img)
+            wins++
+            winsScore()
+            setTimeout(initalGame, 2000)
+
+        } else {
+            left--
+            if (left< 1) {
+                let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/lose.mp3');
+                audio.play()
+                initalGame()
+                losses++
+                lossesScore()
+            } else {
+                let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/bad.mp3');
+                audio.play()
+                wrongGuess(userGuess)
+                guessesLeft()
+            
+            }
+        }
+    }
+}
