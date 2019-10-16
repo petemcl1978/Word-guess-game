@@ -1,36 +1,27 @@
-<!doctype html>
-<html>
-<html lang= "En">
-  <head>
-<!-- basic.html-->
-<title>Lebowski Hangman</title>
-<meta charset = "utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href ="assets/css/style.css"> 
-<script src="assets/javascript/game.js"></script> 
- 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Word-Guess-Game</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Solid|PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body background="assets/images/IMG_2274.jpG">
-  <audio src="assets/10 The Man In Me copy.m4a" autoplay>
-  <p>if you are reading this it is be cause your browser does not support this element.</p>
+<body>
 
- </audio>
-<div class ="wrapper">
-  <h1> Thats Like Hangman, man.</h1>
-  <h2> Big Lebowski's Hangman</h2>
-  <p> Click the letters below to guess the word. </p>
-</div>
-<div class="wrapper">
-  <div id= "buttons">
-  </div>
-  <p id="catagoryName"></p>
-<div id="hold">
-</div>
-<p id="mylives"></p>
-<div class ="container">
-  <buton id="reset">Play Again Dude</buton>
-</div>
-</div>
-</body>
-<footer> <img src="assets/images/FullSizeRender.jpeg" width= "700" height= "75">
-  </footer>
+    <div id="container">
+        <div class="main-container">
+            <h1>Guess the word, man</h1>
+            <h3 class="ptSans">Press the keyboard to guess the letters!</h3>
+            <h3 class="bottom ptSans">Hint: the dude abides</h3>
+            <p id="guess"></p>
+            <p class="size">Guesses Left: <span id="left" class="sizeNumber ptSans"></span></p>
+            <p class="size">Wrong Letters: <span id="wrong" class="sizeNumber ptSans"></span></p>
+            <p class="size">Win: <span id="wins" class="sizeNumber ptSans"></span>Lose: <span id="losses" class="sizeNumber ptSans"></span></p>
+            <div id="img"></div>
+        </div>
+    </div>
+
+    <script src="assets/javascript/game.js"></script>
+    
