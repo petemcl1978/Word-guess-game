@@ -38,7 +38,7 @@ function guessesleft() {
     $("left").innerHTML = wins 
 }
 //wins
-functions winsScore() {
+function winsScore() {
     $("wins").innerHTML = wins 
 }
 //losses 
