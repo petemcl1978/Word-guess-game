@@ -11,7 +11,7 @@ const img = document.createElemnet("img")
 const parent = $("img")
 let answerArray = [];
 let userGuess;
-let rightGuess = false;
+let userRightGuess = false;
 let userRightGuess = 0;
 let left = 9;
 let wins = 0;
